@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt Analysis Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            padding: 40px;
+            color: #000;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        .bar-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 30px;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .clean {
+            background-color: #4CAF50;
+        }
+
+        .injected {
+            background-color: #F44336;
+        }
+
+        .back {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .verdict {
+            margin-top: 25px;
+            font-size: 24px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🔍 Prompt Analysis Result</h1>
+
+    <div>
+        <p><strong>Clean Prompt Score: {{ result.clean_score }}</strong></p>
+        <div class="bar-container">
+            <div class="bar clean" style="width: {{ result.clean_score * 50 }}%;">{{ result.clean_score }}</div>
+        </div>
+
+        <p><strong>Injected Prompt Score: {{ result.injected_score }}</strong></p>
+        <div class="bar-container">
+            <div class="bar injected" style="width: {{ result.injected_score * 50 }}%;">{{ result.injected_score }}</div>
+        </div>
+
+        <div class="verdict">
+            <strong>🧠 Verdict:</strong> {{ result.verdict }}
+        </div>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back">← Analyze Another Prompt</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-size: 32px;
+    color: black;
+}
+
+textarea {
+    width: 90%;
+    height: 150px;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-family: 'Playfair Display', serif;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.result {
+    margin-top: 30px;
+}
+
+.toggle-container {
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: black;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode textarea {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode button {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode .toggle-container {
+    color: white;
+}

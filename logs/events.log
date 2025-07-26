@@ -1,0 +1,26 @@
+[2025-07-24 21:30:34] Error: [Errno 2] No such file or directory: 'prompt_examples/clean/clean_prompt.txt'
+[2025-07-24 21:30:40] Error: [Errno 2] No such file or directory: 'prompt_examples/clean/clean_prompt.txt'
+[2025-07-24 22:18:28] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:18:28] Scoring clean and injected prompts...
+[2025-07-24 22:18:28] Analysis completed. Results saved.
+[2025-07-24 22:18:48] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:18:48] Scoring clean and injected prompts...
+[2025-07-24 22:18:48] Analysis completed. Results saved.
+[2025-07-24 22:43:01] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:43:01] Scoring clean and injected prompts...
+[2025-07-24 22:43:01] Analysis completed. Results saved.
+[2025-07-24 22:43:14] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:43:14] Scoring clean and injected prompts...
+[2025-07-24 22:43:14] Analysis completed. Results saved.
+[2025-07-24 22:43:24] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:43:24] Scoring clean and injected prompts...
+[2025-07-24 22:43:24] Analysis completed. Results saved.
+[2025-07-24 22:43:40] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:43:40] Scoring clean and injected prompts...
+[2025-07-24 22:43:40] Analysis completed. Results saved.
+[2025-07-24 22:48:13] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:48:13] Scoring clean and injected prompts...
+[2025-07-24 22:48:13] Analysis completed. Results saved.
+[2025-07-24 22:49:19] Analyzing prompts from prompt_examples/clean.txt and prompt_examples/injected.txt
+[2025-07-24 22:49:19] Scoring clean and injected prompts...
+[2025-07-24 22:49:19] Analysis completed. Results saved.

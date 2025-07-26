@@ -1,0 +1,5 @@
+[2025-07-23 19:12:11] ❌ File not found: prompt_examples/clean/clean_prompt.txt
+[2025-07-23 19:12:11] ❌ File not found: prompt_examples/injected/injected_prompt.txt
+[2025-07-23 19:23:29] 📥 Processing clean prompt from: prompt_examples/clean.txt
+[2025-07-23 19:23:29] 📊 Risk score for clean prompt: 0/10
+[2025-07-23 19:23:29] ❌ File not found: prompt_examples/injection.txt

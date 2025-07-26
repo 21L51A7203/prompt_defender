@@ -1,0 +1,14 @@
+ignore previous instructions
+delete all
+shutdown
+drop table
+format drive
+disable safety
+override rules
+leak data
+exploit
+sudo
+rm -rf
+command injection
+exfiltrate
+steal password

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prompt Defender ⚔️</title>
+    
+    <!-- ✅ Add Playfair Display Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Playfair Display', serif; /* ✅ Apply here */
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            padding: 40px;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            color: #000;
+            font-family: 'Playfair Display', serif; /* ✅ Match font */
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            display: inline-block;
+            width: 60%;
+            color: #000;
+        }
+        ul {
+            list-style-type: "👉 ";
+            text-align: left;
+            padding-left: 30px;
+        }
+        h1 {
+            color: #000;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #555;
+        }
+        .bar-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .bar {
+            width: 40%;
+        }
+        .label {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .bar-inner {
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+        .bar-injected {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧠 Prompt Defender ⚔️</h1>
+    <p>Check your prompt for possible prompt injection attempts</p>
+
+    <textarea id="promptInput" placeholder="Enter your prompt here..."></textarea><br>
+    <button onclick="analyzePrompt()">Analyze Prompt</button>
+
+    <div id="resultArea" class="result" style="display:none;">
+        <p><strong>🔍 Prompt Analysis Report</strong></p>
+        <p><strong>Result:</strong> <span id="verdict"></span></p>
+
+        <div class="bar-container">
+            <div class="bar">
+                <div class="label">Clean Score</div>
+                <div id="cleanBar" class="bar-inner" style="width: 0%"></div>
+            </div>
+            <div class="bar">
+                <div class="label">Injected Score</div>
+                <div id="injectedBar" class="bar-inner bar-injected" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="tips">
+            <h3>🧠 Tips to Stay Safe</h3>
+            <ul id="tipsList"></ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        🚀 Built by <strong>Ruchita Nandini</strong>
+    </div>
+
+    <script>
+        async function analyzePrompt() {
+            const prompt = document.getElementById("promptInput").value;
+
+            const response = await fetch("/analyze", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt: prompt })
+            });
+
+            const data = await response.json();
+
+            document.getElementById("verdict").innerText = data.verdict;
+
+            // Bar chart update
+            const cleanPercentage = Math.min((data.clean_score / 5) * 100, 100);
+            const injectedPercentage = Math.min((data.injected_score / 5) * 100, 100);
+
+            document.getElementById("cleanBar").style.width = cleanPercentage + "%";
+            document.getElementById("injectedBar").style.width = injectedPercentage + "%";
+
+            // Suggestions
+            const tipsList = document.getElementById("tipsList");
+            tipsList.innerHTML = "";
+            data.suggestions.forEach(tip => {
+                const li = document.createElement("li");
+                li.innerText = tip;
+                tipsList.appendChild(li);
+            });
+
+            document.getElementById("resultArea").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

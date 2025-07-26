@@ -1,0 +1,6 @@
+🔍 Prompt Analysis Report
+
+Clean Prompt Score: 0
+Injected Prompt Score: 0
+
+Result: ✅ No significant prompt injection detected.
